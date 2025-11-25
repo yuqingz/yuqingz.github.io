@@ -1,11 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Personal Website</title>
+  <meta charset="UTF-8">
+  <title>Prof. Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Layout */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* Header / name block */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1.5rem;
+    }
+
+    .profile-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #ddd;
+      object-fit: cover;
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 1.9rem;
+    }
+
+    .title-block h2 {
+      margin: 0.3rem 0 0.5rem;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .title-block .affiliation {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .contact {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .contact a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top navigation links (anchors) */
+    .nav {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .nav a {
+      margin-right: 0.75rem;
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 2rem;
+    }
+
+    section h3 {
+      margin-bottom: 0.7rem;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-top: 0.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    ul {
+      margin: 0.3rem 0 0.7rem 1.2rem;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .year {
+      font-weight: 600;
+      margin-right: 0.4rem;
+      white-space: nowrap;
+    }
+
+    .pub-title {
+      font-weight: 500;
+    }
+
+    .pub-venue {
+      font-style: italic;
+    }
+
+    /* Small screen tweaks */
+    @media (max-width: 600px) {
+      .header {
+        align-items: flex-start;
+      }
+      .profile-photo {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello! Welcome to my website.</h1>
-  <p>This is hosted on GitHub Pages!</p>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <!-- Optional profile photo (replace src="") -->
+      <img class="profile-photo" src="" alt="Your photo (optional)">
+
+      <div class="title-block">
+        <h1>Prof. Your Name</h1>
+        <h2>Assistant Professor of Something</h2>
+        <div class="affiliation">
+          Department of X, Your University<br>
+          City, Country
+        </div>
+
+        <div class="contact">
+          Email: <a href="mailto:you@university.edu">you@university.edu</a><br>
+          GitHub: <a href="https://github.com/yourusername">yourusername</a> ·
+          Google Scholar: <a href="https://scholar.google.com">link</a>
+        </div>
+
+        <nav class="nav">
+          <a href="#bio">Bio</a> ·
+          <a href="#research">Research</a> ·
+          <a href="#publications">Publications</a> ·
+          <a href="#teaching">Teaching</a> ·
+          <a href="#service">Service</a> ·
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- BIO -->
+    <section id="bio">
+      <h3>Bio</h3>
+      <p>
+        I am an Assistant Professor in the Department of X at Your University.
+        My research interests span <strong>area A</strong>, <strong>area B</strong>, and
+        <strong>area C</strong>, with a focus on <em>one-sentence description of your core topic</em>.
+      </p>
+      <p>
+        Previously, I received my Ph.D. from University Y, advised by Prof. Advisor Name.
+        Before that, I completed my B.S. at University Z.
+      </p>
+    </section>
+
+    <!-- RESEARCH / HIGHLIGHTS -->
+    <section id="research">
+      <h3>Research</h3>
+      <p>
+        My group works on problems at the intersection of <strong>topic 1</strong>,
+        <strong>topic 2</strong>, and <strong>topic 3</strong>. Example themes include:
+      </p>
+      <ul>
+        <li>High-performance simulation for <em>your domain</em></li>
+        <li>Differentiable / physics-aware machine learning</li>
+        <li>Tooling and compilers for scientific computing</li>
+      </ul>
+      <p>
+        If you are a motivated student interested in working with me, please send an
+        email with a short description of your background and interests.
+      </p>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <h3>Selected Publications</h3>
+
+      <ul>
+        <li>
+          <span class="year">2024</span>
+          <span class="pub-title">Awesome Paper Title About Your Main Topic</span><br>
+          Your Name, Coauthor A, Coauthor B.<br>
+          <span class="pub-venue">Conference Name / Journal Name</span>.
+          <a href="#">[PDF]</a> <a href="#">[Code]</a>
+        </li>
+        <li>
+          <span class="year">2023</span>
+          <span class="pub-title">Another Cool Result in Your Area</span><br>
+          Your Name, Coauthor C.<br>
+          <span class="pub-venue">Journal of Interesting Things</span>.
+          <a href="#">[PDF]</a>
+        </li>
+        <li>
+          <span class="year">2022</span>
+          <span class="pub-title">Earlier Work on Something Related</span><br>
+          Your Name, Coauthor D, Coauthor E.<br>
+          <span class="pub-venue">Workshop / Symposium</span>.
+        </li>
+      </ul>
+
+      <p>
+        A complete list of publications is available on
+        <a href="https://scholar.google.com">Google Scholar</a>.
+      </p>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching">
+      <h3>Teaching</h3>
+      <ul>
+        <li>
+          <span class="year">2025</span>
+          Course Code – <strong>Course Title</strong>, Your University<br>
+          Short description of what the course covers.
+        </li>
+        <li>
+          <span class="year">2024</span>
+          Course Code – <strong>Another Course</strong>, Your University<br>
+          Brief note (e.g., “graduate course on X, includes project-based work”).
+        </li>
+      </ul>
+    </section>
+
+    <!-- SERVICE / AWARDS -->
+    <section id="service">
+      <h3>Service & Awards</h3>
+      <ul>
+        <li>Program committee: Conference A, Conference B</li>
+        <li>Reviewer: Journal X, Journal Y</li>
+        <li>Award: Best Paper Award at Nice Conference, 2023</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>
+        The best way to reach me is by email:<br>
+        <a href="mailto:you@university.edu">you@university.edu</a>
+      </p>
+      <p>
+        Department of X<br>
+        Your University<br>
+        Street address line 1<br>
+        City, State/Province, Postal Code<br>
+        Country
+      </p>
+    </section>
+  </div>
 </body>
 </html>
