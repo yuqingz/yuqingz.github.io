@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <title>Doc. Yuqing Zhou (under construction)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
+    /* Global reset-ish */
+    * {
+      box-sizing: border-box;
+    }
+
     /* Layout */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -16,7 +22,7 @@
     }
 
     .page {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 2rem 1.5rem 3rem;
     }
@@ -28,7 +34,6 @@
       align-items: center;
       gap: 1.5rem;
       margin-bottom: 2rem;
-      border-bottom: 1px solid #ddd;
       padding-bottom: 1.5rem;
     }
 
@@ -38,11 +43,17 @@
       border-radius: 50%;
       background: #ddd;
       object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .title-block {
+      min-width: 0; /* better wrapping on small screens */
     }
 
     .title-block h1 {
       margin: 0;
-      font-size: 1.9rem;
+      font-size: 2rem;
+      word-break: keep-all;
     }
 
     .title-block h2 {
@@ -53,36 +64,67 @@
     }
 
     .title-block .affiliation {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #666;
+      margin-bottom: 0.4rem;
     }
 
-    /* Top navigation links (anchors) */
-    .nav {
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
+    .contact {
+      font-size: 1rem;
+      color: #444;
     }
 
-    .nav a {
-      margin-right: 0.75rem;
-      color: #0066cc;
+    /* Top navigation bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #EB0A1E;          /* Toyota red */
+    }
+
+    /* THIS is now the width + padding authority */
+    .top-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .top-nav a {
+      font-size: 1.2rem;
+      font-weight: 600;
       text-decoration: none;
     }
 
-    .nav a:hover {
-      text-decoration: underline;
+    .top-nav-inner a {
+      color: white;
     }
-
+    .top-nav-inner a:hover {
+      color: #111;
+      opacity: 0.85;
+    }
+    
+    .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
     /* Sections */
     section {
       margin-top: 2rem;
     }
 
     section h3 {
-      margin-bottom: 0.7rem;
-      font-size: 1.1rem;
+      width: 100%;
+      margin: 0 0 1rem 0;
+      padding-left: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #111;
       border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.35rem;
     }
 
     p {
@@ -100,71 +142,174 @@
     }
 
     .year {
-      font-weight: 600;
       margin-right: 0.4rem;
       white-space: nowrap;
     }
 
     .pub-title {
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .pub-venue {
       font-style: italic;
     }
 
-    /* Small screen tweaks */
+    /* Publication list with figures */
+    .pub-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.3rem 0 0.7rem;
+    }
+
+    .pub-item {
+      display: flex;
+      gap: 0.9rem;
+      margin-bottom: 1.1rem;
+      align-items: flex-start;
+    }
+
+    .pub-figure {
+      flex: 0 0 300px;
+    }
+
+    .pub-figure img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      background: #eee;
+    }
+
+    .pub-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* LINKS */
+    a {
+      color: #0066cc;
+    }
+
+    a:hover {
+      color: #004a99;
+    }
+
+    .new-pill {
+      margin-left: 0.4rem;
+      padding: 0.1em 0.1em;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #EB0A1E;                     /* Toyota red */
+      border: 1px solid #EB0A1E;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      vertical-align: middle;
+    }
+
+    /* Medium screen tweaks (tablets, small laptops) */
+    @media (max-width: 900px) {
+      .page {
+        padding: 1.5rem 1.25rem 2.5rem;
+      }
+
+      .title-block h1 {
+        font-size: 1.7rem;
+      }
+
+      .profile-photo {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    /* Small screen tweaks (phones, small tablets in portrait) */
     @media (max-width: 600px) {
+      .nav a {
+        font-size: 1rem;
+      }
+      .page {
+        padding: 1.25rem 1rem 2rem;
+      }
+
       .header {
         align-items: flex-start;
       }
+
       .profile-photo {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
+      }
+
+      .title-block h1 {
+        font-size: 1.5rem;
+      }
+
+      .title-block h2 {
+        font-size: 0.95rem;
+      }
+
+      .nav {
+        font-size: 0.85rem;
+      }
+
+      /* Stack publication figure and text vertically */
+      .pub-item {
+        flex-direction: column;
+      }
+
+      .pub-figure {
+        flex: 0 0 auto;
+        max-width: 300px;
       }
     }
   </style>
 </head>
 <body>
+
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="#bio">Bio</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+    </div>
+  </nav>
   <div class="page">
     <!-- HEADER -->
     <header class="header">
       <!-- Optional profile photo (replace src="") -->
-      <img class="profile-photo" src="" alt="Your photo (optional)">
+      <img class="profile-photo" src="img/photo.jpeg" alt="Your photo (optional)">
 
       <div class="title-block">
-        <h1>Doc. Yuqing Zhou (under construction)</h1>
-        <h2>Optimization Researcher at Toyota</h2>
+        <h1>Yuqing Zhou (under construction)</h1>
+        <h2>Optimization Researcher at Toyota, PhD UMich 2018</h2>
         <div class="affiliation">
           <a href="https://amrd.toyota.com/division/trina/" target="_blank" rel="noopener">Toyota Research Institute of North America</a><br>
-          <a href="https://www.toyota.com" target="_blank" rel="noopener">Toyota Motor North America</a><br>
-          Ann Arbor, Michigan, USA
+          Toyota Motor North America R&D<br>
+          Michigan, USA
         </div>
 
         <div class="contact">
           Email: firstname.lastname@toyota.com<br>
-          Google Scholar: <a href="https://scholar.google.com/citations?user=KZL3MMoAAAAJ&hl=en">link</a> · 
-          LinkedIn: <a href="https://www.linkedin.com/in/yuqingz">link</a>
+          <a href="https://scholar.google.com/citations?user=KZL3MMoAAAAJ&hl=en">Google Scholar</a> ·
+          <a href="https://www.linkedin.com/in/yuqingz">LinkedIn</a>
         </div>
-
-        <nav class="nav">
-          <a href="#bio">Bio</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-        </nav>
-      </div>
+     </div>
     </header>
 
     <!-- BIO -->
     <section id="bio">
       <h3>Bio</h3>
       <p>
-        I am currently an optimization researcher in Electronics Research Department at Toyota Research Institute of North America (TRINA).
-        My research focuses on exploring innovative geometries through simulation-based structural optimization to achieve high-performance, manufacturable engineering designs.
+        I am a research scientist in Electronics Research Department at <a href="https://amrd.toyota.com/division/trina/" target="_blank" rel="noopener">Toyota Research Institute of North America</a>.
+        My research focuses on <strong>exploring innovative geometries through simulation-based structural optimization to achieve high-performance and manufacturable engineering designs</strong>.
       </p>
       <p>
-        Previously, I spent one year in Japan working on photonic chip design with <a href="https://www.tytlabs.co.jp/en/" target="_blank" rel="noopener">Toyota Central R&D Labs</a> and <a href="https://global.toyota/jp/mobility/frontier-research/" target="_blank" rel="noopener">Toyota Frontier Research Center</a>.        I received my Ph.D. in Mechanical Engineering from <a href="https://me.engin.umich.edu" target="_blank" rel="noopener">University of Michigan</a>.
-        Before that, I completed my B.S. at Northeastern University (Shenyang, China).
+        Previously, I spent a wonderful year in Tokyo, Japan working on photonic chip design with <a href="https://www.tytlabs.co.jp/en/" target="_blank" rel="noopener">Toyota Central R&D Labs</a> and <a href="https://global.toyota/jp/mobility/frontier-research/" target="_blank" rel="noopener">Toyota Frontier Research Center</a>.
+        I earned my Ph.D. from the Department of Mechanical Engineering at <a href="https://me.engin.umich.edu" target="_blank" rel="noopener">University of Michigan</a>, under the guidance of Prof. Kazuhiro Saitou.
+      </p>
+      <p>
+        In my free time, I like messing around with camera gears and cheering for the <a href="https://mgoblue.com" target="_blank" rel="noopener">maize and blue</a>.
+        I've been playing NBA Live/2K since early 2000s, and to this day, it's still the only video game I play.
       </p>
     </section>
 
@@ -172,12 +317,23 @@
     <section id="research">
       <h3>Research</h3>
       <p>
-        My works are at the intersection of <strong>design optimization</strong>,
-        <strong>multiphysics simulation</strong>, and <strong>advanced fabrication</strong>. Recent example topics include:
+        My work lies at the intersection of <strong>design optimization</strong>, <strong>multiphysics simulation</strong>, and <strong>advanced fabrication</strong>. 
+        I formulate structural design problems as PDE-constrained optimization, where at least one constraint is expressed through a partial differential equation governing the physics equilibrium. 
+        I've enjoyed using PDEs to model 
+        <span style="color:#E57373;"><strong>elastic deformation</strong></span>, 
+        <span style="color:#64B5F6;"><strong>fluid flow</strong></span>, 
+        <span style="color:#FFD54F;"><strong>heat transfer</strong></span>, 
+        <span style="color:#81C784;"><strong>electrochemical reaction</strong></span>, and 
+        <span style="color:#BA68C8;"><strong>electromagnetic wave propagation</strong></span> 
+        across different projects.
+        I also incorporate process-specific fabrication constraints to ensure that the optimized designs are manufacturable.
       </p>
+      Recent topics include:
       <ul>
-        <li>Quantum photonic integrated circuits (NEW)</li>
-        <li>Lightweight composite structures</li>
+        <li>Quantum photonic integrated circuits
+          <span class="new-pill">NEW!</span>
+        </li>
+        <li>Lightweight composite structures made by tailored fiber placement</li>
         <li>Flow field plates for hydrogen fuel cells</li>
       </ul>
     </section>
@@ -185,34 +341,121 @@
     <!-- PUBLICATIONS -->
     <section id="publications">
       <h3>Selected Publications</h3>
-
-      <ul>
-        <li>
-          <span class="year">2025</span>
-          <span class="pub-title">Paper Title</span><br>
-          Your Name, Coauthor A, Coauthor B.<br>
-          <span class="pub-venue">Conference Name / Journal Name</span>.
-          <a href="#">[PDF]</a> <a href="#">[Code]</a>
-        </li>
-        <li>
-          <span class="year">2024</span>
-          <span class="pub-title">Paper Title</span><br>
-          Your Name, Coauthor A, Coauthor B.<br>
-          <span class="pub-venue">Conference Name / Journal Name</span>.
-          <a href="#">[PDF]</a> <a href="#">[Code]</a>
-        </li>
-        <li>
-          <span class="year">2023</span>
-          <span class="pub-title">Paper Title</span><br>
-          Your Name, Coauthor A, Coauthor B.<br>
-          <span class="pub-venue">Conference Name / Journal Name</span>.
-          <a href="#">[PDF]</a> <a href="#">[Code]</a>
-        </li>
-      </ul>
-
       <p>
         A complete list of publications is available on
         <a href="https://scholar.google.com/citations?user=KZL3MMoAAAAJ&hl=en">Google Scholar</a>.
+      </p>
+
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <!-- Replace with your actual image -->
+            <img src="img/2025smo.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2025</span>
+            <span class="pub-title">Prototyping a CFRP-aluminum automotive frame via multi-component anisotropic topology optimization</span><br>
+            Tsuyoshi Nomura, Yuqing Zhou, Masaaki Tanaka, Hiroki Kobayashi, Changyoung Yuhn, Atsushi Kawamoto, Yoshihiro Iwano<br>
+            <span class="pub-venue">Structural and Multidisciplinary Optimization</span>
+            <a href="#">[paper]</a> <a href="https://www.youtube.com/watch?v=ajO5bDcdlyQ">[video]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <!-- Replace with your actual image -->
+            <img src="img/2025ijhe.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2025</span>
+            <span class="pub-title">Inverse design and porous metal printing of GDL-integrated flow field plates for high-temperature hydrogen fuel cells</span><br>
+            Yuqing Zhou, Danny J Lohan, Utsav R Aryal, Gaohua Zhu, Ercan M Dede<br>
+            <span class="pub-venue">International Journal of Hydrogen Energy</span>
+            <a href="#">[paper]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <!-- Replace with your actual image -->
+            <img src="img/2024tog.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2024</span>
+            <span class="pub-title">Multi-level partition of unity on differentiable moving particles</span><br>
+            Jinjin He, Taiyuan Zhang, Hiroki Kobayashi, Atsushi Kawamoto, Yuqing Zhou, Tsuyoshi Nomura, Bo Zhu<br>
+            <span class="pub-venue">ACM Transactions on Graphics</span>
+            <a href="#">[paper]</a> <a href="https://www.youtube.com/watch?v=idHAYIO04AY">[video]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <!-- Replace with your actual image -->
+            <img src="img/2022cej.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2022</span>
+            <span class="pub-title">Inverse design of microreactor flow fields through anisotropic porous media optimization and dehomogenization</span><br>
+            Yuqing Zhou, Danny J Lohan, Feng Zhou, Tsuyoshi Nomura, Ercan M Dede<br>
+            <span class="pub-venue">Chemical Engineering Journal</span>
+            <a href="#">[paper]</a> <a href="https://www.comsol.com/video/keynote-inverse-design-enables-innovation-in-hydrogen-fuel-cells">[video]</a>
+            <a href="https://www.comsol.com/story/generative-design-puts-hydrogen-fuel-cell-development-in-high-gear-116191">[story]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <!-- Replace with your actual image -->
+            <img src="img/2021jcise.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2021</span>
+            <span class="pub-title">Anisotropic multicomponent topology optimization for additive manufacturing with build orientation design and stress-constrained interfaces</span><br>
+            Yuqing Zhou, Tsuyoshi Nomura, Kazuhiro Saitou<br>
+            <span class="pub-venue">ASME Journal of Computing and Information Science in Engineering</span>
+            <a href="#">[paper]</a> <a href="https://www.youtube.com/watch?v=eDAhLuNTq8Y">[video]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <!-- Replace with your actual image -->
+            <img src="img/2020itherm.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2020</span>
+            <span class="pub-title">Topology optimization of manifold microchannel heat sinks</span><br>
+            Yuqing Zhou, Tsuyoshi Nomura, Ercan M Dede<br>
+            <span class="pub-venue">19th IEEE Intersociety Conference on Thermal and Thermomechanical Phenomena in Electronic Systems (ITherm)</span>
+            <a href="#">[paper]</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <!-- Replace with your actual image -->
+            <img src="img/2018cmame.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2018</span>
+            <span class="pub-title">Multi-component topology and material orientation design of composite structures (MTO-C)</span><br>
+            Yuqing Zhou, Tsuyoshi Nomura, Kazuhiro Saitou<br>
+            <span class="pub-venue">Computer Methods in Applied Mechanics and Engineering</span>
+            <a href="#">[paper]</a>
+          </div>
+        </li>
+      </ul>
+
+      <h3>Patents</h3>
+      <p>
+        <a href="https://scholar.google.com/scholar?start=0&q=%22Yuqing+Zhou%22+%22Toyota+Motor+Engineering+and+Manufacturing+North+America%22+%22Google+Patents%22&hl=en&as_sdt=80000007">Several</a> issued United States patents
+      </p>
+
+      <h3>Dissertation</h3>
+      <p>
+        Zhou, Y. (2018). <em>Gradient-Based Multi-Component Topology Optimization for Manufacturability</em>. PhD Thesis, University of Michigan. <a href="https://deepblue.lib.umich.edu/items/a92755ad-ef70-45dd-801d-f4f2c0b7c4fb">[thesis]</a>
       </p>
     </section>
   </div>
