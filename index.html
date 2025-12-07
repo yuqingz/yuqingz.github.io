@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+  const navLinks = document.querySelectorAll('.top-nav-inner a');
+  const sections = document.querySelectorAll('section');
+
+  function onScroll() {
+    let currentSectionId = '';
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom > 120) {
+        currentSectionId = section.id;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.toggle(
+        'active',
+        link.getAttribute('href') === '#' + currentSectionId
+      );
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // run once on load
+</script>
+
 <head>
   <meta charset="UTF-8">
-  <title>Doc. Yuqing Zhou (under construction)</title>
+  <title>Yuqing Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     /* Global reset-ish */
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     /* Layout */
@@ -98,11 +128,17 @@
     }
 
     .top-nav-inner a {
-      color: white;
+      color: rgba(255, 255, 255, 0.75);
+      transition: color 0.2s ease, border-bottom 0.2s ease;
     }
     .top-nav-inner a:hover {
       color: #111;
       opacity: 0.85;
+    }
+    .top-nav-inner a.active {
+      color: #FFD54F;
+      border-bottom: 2px solid #FFD54F;
+      padding-bottom: 2px;
     }
     
     .top-nav {
@@ -280,7 +316,7 @@
       <img class="profile-photo" src="img/photo.jpeg" alt="Your photo (optional)">
 
       <div class="title-block">
-        <h1>Yuqing Zhou (under construction)</h1>
+        <h1>Yuqing Zhou</h1>
         <h2>Optimization Researcher at Toyota, PhD UMich 2018</h2>
         <div class="affiliation">
           <a href="https://amrd.toyota.com/division/trina/" target="_blank" rel="noopener">Toyota Research Institute of North America</a><br>
