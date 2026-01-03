@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal blog by Yuqing Zhou. Notes on design optimization, multiphysics simulation, and research highlights." />
+  <meta name="robots" content="index, follow" />
+  <title>Blog | Yuqing Zhou</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* Top navigation */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #EB0A1E;
+    }
+
+    .top-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .top-nav-inner a {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .top-nav-inner a:hover {
+      color: #111;
+      opacity: 0.85;
+    }
+
+    h1 { margin: 0 0 0.25rem; font-size: 2rem; }
+    .subtitle { color: #555; margin-bottom: 1.5rem; }
+
+    /* Blog list */
+    .post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .post-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e6e6e6;
+      align-items: baseline;
+    }
+
+    .post-date {
+      flex: 0 0 130px;
+      color: #666;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .post-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .post-title {
+      font-weight: 700;
+      margin: 0 0 0.15rem;
+    }
+
+    .post-snippet {
+      color: #555;
+      margin: 0.25rem 0 0.6rem;
+    }
+
+    .read-more {
+      font-weight: 600;
+      color: #0066cc;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .read-more:hover { text-decoration: underline; }
+    .read-more::after { content: "→"; }
+
+    @media (max-width: 600px) {
+      .post-item { flex-direction: column; }
+      .post-date { flex: 0 0 auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <header>
+      <h1>Blog</h1>
+      <p class="subtitle">
+        This blog is a place where I share interests and thoughts outside my formal research. Most posts are reflections from my reading and learning, written with AI assistance and extensively edited to reflect my own views. It mainly serves as a personal archive of ideas I wanted to revisit later. I'm happy if they resonate with you too.
+      </p>
+    </header>
+
+    <ul class="post-list">
+
+      <li class="post-item">
+        <div class="post-date">2025-12-25</div>
+        <div class="post-main">
+          <p class="post-title">The Perfect Portfolio</p>
+          <p class="post-snippet">
+            Principles for building an investment portfolio<br>
+            <a class="read-more inline" href="post/2025-12-25-perfect-portfolio.html">Read</a>
+          </p>
+        </div>
+      </li>
+
+
+      <li class="post-item">
+        <div class="post-date">2025-12-15</div>
+        <div class="post-main">
+          <p class="post-title">A Simple Formula for Building Wealth</p>
+          <p class="post-snippet">
+            Understanding the balance of contributions, returns, and time—so you can invest new savings immediately and remain invested through market cycles<br>
+            <a class="read-more inline" href="post/2025-12-15-simple-formula.html">Read</a>
+          </p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</body>
+</html>

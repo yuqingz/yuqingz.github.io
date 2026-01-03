@@ -30,13 +30,6 @@
         currentSectionId = section.id;
       }
     });
-
-    navLinks.forEach(link => {
-      link.classList.toggle(
-        'active',
-        link.getAttribute('href') === '#' + currentSectionId
-      );
-    });
   }
 
   window.addEventListener('scroll', onScroll);
@@ -49,7 +42,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Yuqing Zhou is a researcher specializing in topology optimization and computational design. Papers and patents." />
   <meta name="robots" content="index, follow">
-  <title>Yuqing Zhou | Optimization Researcher at Toyota</title>
+  <title>Yuqing Zhou @ Toyota | Personal Website</title>
 
   <style>
     /* Global reset-ish */
@@ -154,11 +147,6 @@
     .top-nav-inner a:hover {
       color: #111;
       opacity: 0.85;
-    }
-    .top-nav-inner a.active {
-      color: #FFD54F;
-      border-bottom: 2px solid #FFD54F;
-      padding-bottom: 2px;
     }
     
     .top-nav {
@@ -325,10 +313,11 @@
   <nav class="top-nav">
     <div class="top-nav-inner">
       <a href="#bio">Bio</a>
-      <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="blog.html">Blog</a>
     </div>
   </nav>
+
   <div class="page">
     <!-- HEADER -->
     <header class="header">

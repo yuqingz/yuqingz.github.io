@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <title>The perfect portfolio</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+    .top-nav { position: sticky; top: 0; z-index: 1000; background: #EB0A1E; }
+    .top-nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0.75rem 1.5rem;
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
+    }
+    .top-nav-inner a {
+      font-size: 1.2rem; font-weight: 600; text-decoration: none;
+      color: rgba(255,255,255,0.75);
+    }
+    .top-nav-inner a:hover { color: #111; opacity: 0.85; }
+    .page { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+    h1 { margin: 0 0 0.25rem; font-size: 2rem; }
+    .meta { color: #666; margin: 0 0 1.25rem; }
+    .content { background: #fff; padding: 1.25rem; border-radius: 12px; border: 1px solid #eee; }
+    pre { background: #f2f2f2; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.95em; }
+
+    .solution-box{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-left:6px solid #EB0A1E; /* Toyota red accent */
+      border-radius:12px;
+      padding:1rem 1.1rem;
+      margin:1rem 0 1.25rem;
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    }
+    .solution-box .label{
+      font-weight:700;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+      font-size:.85rem;
+      margin:0 0 .5rem;
+      color:#111;
+    }
+    .solution-box p{ margin:.5rem 0 0; }
+  </style>
+
+  <script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="../blog.html">← Back to Blog</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <header>
+      <h1>The perfect portfolio</h1>
+      <p class="meta">2025-12-25</p>
+    </header>
+
+    <article class="content">
+      In the <a href="2025-12-15-simple-formula.html">previous post</a>, I argued that wealth ultimately depends on three variables: how much you contribute, how long you stay invested, and the returns you earn. On paper, chasing higher returns looks like the fastest path to wealth. In practice, higher expected returns usually come with higher risk—and that risk often shows up behaviorally, causing hesitation, second-guessing, or selling at exactly the wrong time.
+
+      That's why the two levers you truly control—how much you save and invest, and how long you remain invested—matter far more than trying to outsmart the market. <strong style="color: #EB0A1E;">In that sense, my definition of a “perfect” portfolio is a simple one: it lets you invest new savings immediately and stay invested through everything.</strong>
+
+      Of course, what makes this possible will look different for each person. In the rest of this post, I'll review two portfolio philosophies and highlight a few practical principles inspired by them. I hope this helps you find your own path toward a “perfect” portfolio.
+
+      <h3><a href="https://youtu.be/3uJbHREmUs4?si=vefZ_gQL_QiDS3wn" target="_blank" rel="noopener">John Bogle</a>'s perfect portfolio</h3>
+      <p>
+        <ul>
+          <li>Entirely in low-cost stock and bond index funds. Allocation should be age based</li>
+          <li>Focus on U.S. market for equity investments. 20% allocation to international is fine</li>
+          <li>Regular rebalancing is not terrible, but not necessary</li>
+          <li>A small percentage in emerging market index and gold</li>
+        </ul>
+      </p>
+
+      <h3><a href="https://youtu.be/XsXOLZ9U7jI?si=DmR2TkcA2ZXbpbso" target="_blank" rel="noopener">William Sharpe</a>'s perfect portfolio</h3>
+      <p>
+        <ul>
+          <li>Treasury inflation-protected securities (TIPS) plus all the tradable bonds and stocks in the world in market proportions</li>
+            <li>
+            World Bond-Stock fund (<a href="https://web.stanford.edu/~wfsharpe/RISMAT/RISMAT-7.pdf" target="_blank" rel="noopener">WBS</a>):
+            <a href="https://retirementincomeanalysis.blogspot.com/2019/09/a-two-fund-proxy-for-world-bond-stock.html" target="_blank" rel="noopener">two-fund proxy</a>;
+            <a href="https://retirementincomeanalysis.blogspot.com/2019/08/the-four-fund-proxy-for-wold-bond-stock.html" target="_blank" rel="noopener">four-fund proxy</a>
+            </li>
+          <li>It makes little sense to be obsessive about rebalancing since the majority of the changes in their relative values will result from changes in the prices of assets already held in WBS</li>
+        </ul>
+      </p>
+
+      <p>
+        My own investing journey began with JL Collins's <a href="https://www.fiology.com/vtsax-and-chill/" target="_blank" rel="noopener">VTSAX and chill</a>, also heavily influenced by Ray Dalio's <a href="https://youtu.be/tZyWVxGXPHo?si=4zvy6LY3sRlNfCN6" target="_blank" rel="noopener">forceful warnings</a> during the low-interest-rate era — “cash is trash”, “don't own bonds”, and “gold should be part of your portfolio.” However, as markets and interest rates evolved, my thinking evolved too. I gradually shifted toward William Sharpe's globally diversified WBS strategy based on the concept of efficient frontier, adding bonds and international exposure to build a balanced and hopefully more resilient portfolio.
+      </p>
+      
+      <h3>Summary of principles</h3>
+      <p>
+        <ul>
+          <li>Low-cost broad market index funds (ETFs preferred in taxable accounts)</li>
+          <li>Global diversification—including emerging markets—based on market weights is especially compelling today, given elevated US valuations, a decade of US outperformance, and a weakening dollar. A modest home-country bias is reasonable, reflecting where you expect to spend your money</li>
+          <li>Bond allocation should depend on risk tolerance and time horizon (as of Dec 2025, <a href="https://youtu.be/SdyenaLIXD0?si=YNeo0CWJGmxmMXsk" target="_blank" rel="noopener">bonds look very attractive</a>)</li>
+          <li>A small percentage in non-productive assets (e.g., gold and crypto) is acceptable if they do not exceed their market proportions relative to stocks and bonds</li>
+          <li>A small percentage for individual stocks is acceptable if you acknowledge that it is for fun and they will collectively underperform broad market in the long run</li>
+        </ul>
+      </p>
+
+
+
+      <h3>Further Resources</h3>
+      <ul>
+        <li>Andrew W. Lo and Stephen R. Foerster (2021) <a href="https://amzn.to/3MZ2z6J" target="_blank" rel="noopener">In Pursuit of the Perfect Portfolio: The Stories, Voices, and Key Insights of the Pioneers Who Shaped the Way We Invest</a>
+          (affiliated link)
+        </li>
+      </ul>
+    </article>
+  </div>
+</body>
+</html>

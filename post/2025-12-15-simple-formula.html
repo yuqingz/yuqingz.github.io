@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <title>Simple formula for personal finance</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+    .top-nav { position: sticky; top: 0; z-index: 1000; background: #EB0A1E; }
+    .top-nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0.75rem 1.5rem;
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
+    }
+    .top-nav-inner a {
+      font-size: 1.2rem; font-weight: 600; text-decoration: none;
+      color: rgba(255,255,255,0.75);
+    }
+    .top-nav-inner a:hover { color: #111; opacity: 0.85; }
+    .page { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+    h1 { margin: 0 0 0.25rem; font-size: 2rem; }
+    .meta { color: #666; margin: 0 0 1.25rem; }
+    .content { background: #fff; padding: 1.25rem; border-radius: 12px; border: 1px solid #eee; }
+    pre { background: #f2f2f2; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.95em; }
+
+    .solution-box{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-left:6px solid #EB0A1E; /* Toyota red accent */
+      border-radius:12px;
+      padding:1rem 1.1rem;
+      margin:1rem 0 1.25rem;
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    }
+    .solution-box .label{
+      font-weight:700;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+      font-size:.85rem;
+      margin:0 0 .5rem;
+      color:#111;
+    }
+    .solution-box p{ margin:.5rem 0 0; }
+  </style>
+
+  <script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="../blog.html">← Back to Blog</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <header>
+      <h1>A Simple Formula for Building Wealth</h1>
+      <p class="meta">2025-12-15</p>
+    </header>
+
+    <article class="content">
+      <h3>The net worth (wealth) formula</h3>
+      <p>
+      \[
+      W_n
+      =
+      \cancel{A_0(1+r)^n}
+      +
+      \sum_{i=1}^{n} C_i (1+r)^{\,n-i}
+      \]
+      </p>
+
+      <p>
+      Here, \(A_0\) represents the assets you already have today. Since this post focuses on what you can actively control going forward, that term—determined by past decisions—is ignored for now.
+      \(C_i\) is the contribution made in year \(i\), coming from your net saving (earnings minus spending).  
+      \(r\) is the annual rate of return, and \(n\) is the number of years from today.
+      </p>
+
+      <p>
+      This formula highlights a simple but powerful idea: wealth grows through the interaction of contributions, time, and returns. Each year's contribution increases wealth linearly, while time and compounding returns amplify those contributions exponentially.
+      </p>
+
+      <h3>The optimized solution</h3>
+      <p>
+        At a glance, the solution to the wealth maximization as an optimization problem seems almost trivially simple: contribute more, earn a higher return, and wait long enough.
+      </p>
+
+      <p>
+        In reality, however, these three ingredients are tightly linked and constrained by personal circumstances.
+        Chasing higher returns usually means taking on more risk, which can change behavior in subtle but important ways.
+        Greater risk often makes people hesitate to turn savings into actual investment contributions, or tempts them to constantly “dance in and out of the market”.
+        The result is a tradeoff: aiming for higher returns (\(r\) &uarr;) often leads to smaller or delayed contributions
+        (\(C_i\) &darr;) and a shorter effective time in the market (\(t\) &darr;).
+        What looks like a gain in theory can easily undermine long-term wealth growth in practice.
+      </p>
+
+      <p>
+        This brings us to the core challenge of personal finance: balancing contributions, returns, and time. Borrowing an idea from <a href="https://sites.google.com/umich.edu/pyp/research/theory-and-algorithms/monotonicity-analysis" target="_blank" rel="noopener">Monotonicity Analysis</a> in optimal design theory, we can use simple “directional” insights—knowing what helps and what hurts—to turn wealth building from a black-box guessing game into a transparent, common-sense reasoning process.
+      </p>
+
+      <div class="solution-box" role="note" aria-label="Proposed solution">
+        <div class="label">Solution to maximize wealth</div>
+        <p>
+          Build a personalized portfolio aligned with your risk tolerance, so you're comfortable investing new savings immediately and staying invested through market cycles. Automate contributions while minimizing fees and tax frictions, so wealth compounding can work continuously without interference.
+        </p>
+      </div>
+      
+      <p>
+        The million-dollar question, then, is how to build such a personalized portfolio. Because it's personal, there's no one-size-fits-all answer. But you know you've found the right one when you invest new savings without hesitation—and when nothing tempts you to interfere with it, whether it's pandemic, trade war, inflation spike, or geopolitical turmoil.
+        In a separate <a href="../post/2025-12-25-perfect-portfolio.html">post</a>, I will share a few general principles to build your personalized portfolio.
+      </p>
+
+      <p>
+        I'll end this post with a quote from <a href="https://youtu.be/XsXOLZ9U7jI?si=l2Eg4yu4eme1wJqE&t=2904" target="_blank" rel="noopener">William Sharpe</a>:
+        “That's how you invest—but you've got to save enough first. Most people, many people, are not. Sacrifice! You've just got to save an awful lot.”
+      </p>
+
+
+      <h3>Further Resources</h3>
+      <ul>
+        <li>J L Collins (2025) <a href="https://amzn.to/4qaTCW3" target="_blank" rel="noopener">The Simple Path to Wealth</a>(affiliated link)
+        </li>
+        <li>John C. Bogle (2017) <a href="https://amzn.to/3MMxhzJ" target="_blank" rel="noopener">The Little Book of Common Sense Investing</a>(affiliated link)
+        </li>
+        <li> Video clips of Warren Buffett and Jack Bogle
+            <a href="https://youtu.be/y4tITwhEfFE?si=1BeORrWFnOWoOZbR" target="_blank" rel="noopener">[1]</a>
+            <a href="https://youtu.be/Ag2CX4osPNQ?si=SBANlnwtFXqnZ4L0" target="_blank" rel="noopener">[2]</a>
+            <a href="https://youtu.be/gl6Im-LTuZg?si=l5ggg_Q7NHZWKp16" target="_blank" rel="noopener">[3]</a>
+            <a href="https://youtu.be/BnqlGHZwveE?si=mvMe4oaEDaIvTva1" target="_blank" rel="noopener">[4]</a>
+        </li>
+      </ul>
+    </article>
+  </div>
+</body>
+</html>
