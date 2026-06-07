@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resume of Yuqing Zhou" />
+  <title>Yuqing Zhou | Resume</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #EB0A1E;
+    }
+
+    .top-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .top-nav-inner a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .top-nav-inner a:hover {
+      color: #fff;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .toolbar {
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .download-btn {
+      border: 1px solid #EB0A1E;
+      background: #EB0A1E;
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.55rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .download-btn:hover {
+      opacity: 0.9;
+    }
+
+    .resume {
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.9rem;
+    }
+
+    .degree-suffix {
+      font-size: 0.65em;
+      color: #777;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      margin-top: 0.2rem;
+      color: #555;
+    }
+
+    h2 {
+      margin-top: 1.4rem;
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin: 0.35rem 0;
+    }
+
+    ul {
+      margin: 0.3rem 0 0.7rem 1.2rem;
+      padding-left: 0;
+    }
+
+    .item-title {
+      font-weight: 600;
+    }
+
+    .item-meta {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .top-nav,
+      .toolbar {
+        display: none;
+      }
+
+      .page {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .resume {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="resume.html">Resume</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="toolbar">
+      <button class="download-btn" onclick="downloadResumePDF()">Download PDF Resume</button>
+    </div>
+
+    <main class="resume">
+      <h1>Yuqing Zhou <span class="degree-suffix">PhD</span></h1>
+      <p class="subtitle">Simulation and Optimization Senior Scientist | Toyota Motor North America</p>
+      <p>Michigan, USA · yuqingz@umich.edu</p>
+      <p>
+        <a href="https://www.linkedin.com/in/yuqingz">LinkedIn</a> ·
+        <a href="https://scholar.google.com/citations?user=KZL3MMoAAAAJ&hl=en">Google Scholar</a>
+      </p>
+
+      <h2>Summary</h2>
+      <p>
+        Research scientist specializing in multiphysics simulations and computational design. Passionate about translating engineering design challenges into computational models, objectives, and constraints, solving them through numerical optimization and high-performance computing, and producing high-performing designs that are manufacturable and reliable.
+      </p>
+
+      <h2>Experience</h2>
+      <p class="item-title">Senior Scientist, Toyota Research Institute of North America</p>
+      <p class="item-meta">Toyota Motor North America · Michigan, USA · 2019 - Present</p>
+      <ul>
+        <li>Led simulation-based design optimization projects for vehicle lightweighting, hydrogen fuel cells, electronics cooling, and integrated photonics.</li>
+        <li>Developed in-house structural optimization workflow and codebase across multiphysics systems including structural, flow, thermal, and electromagnetics.</li>
+      </ul>
+
+      <p class="item-title">Intra-Company Transfer Assignment, Toyota Frontier Research Center / Toyota Central R&D Labs</p>
+      <p class="item-meta">Tokyo, Japan · 2024 - 2025</p>
+      <ul>
+        <li>Developed integrated photonic components through computational design and fabrication tape-out.</li>
+      </ul>
+
+      <h2>Education</h2>
+      <p class="item-title">Ph.D., Mechanical Engineering</p>
+      <p class="item-meta">University of Michigan · 2018</p>
+      <p>Dissertation: Gradient-Based Multi-Component Topology Optimization for Manufacturability</p>
+      <p class="item-title">M.S., Mechanical Engineering</p>
+      <p class="item-meta">University of Michigan · 2014</p>
+      <p class="item-title">B.S., Mechanical Engineering</p>
+      <p class="item-meta">Northeastern University (China) · 2012</p>
+
+      <h2>Selected Highlights</h2>
+      <ul>
+        <li>Led  <em>SMO</em>, 2025.</li>
+        <li>Inverse design and porous metal printing of GDL-integrated flow field plates, <em>IJHE</em>, 2025.</li>
+        <li>Multi-level partition of unity on differentiable moving particles, <em>TOG</em>, 2024.</li>
+      </ul>
+
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Optimization:</strong> Gradient-based methods, non-gradient global search algorithms, topology optimization and inverse design</li>
+        <li><strong>Modeling & Simulation:</strong> Finite element analysis and multiphysics simulations (COMSOL). Photonic simulations (Tidy3D)</li>
+        <li><strong>Programming:</strong> Agent-assisted programming workflows and GPU-accelerated scientific computing with Python</li>
+      </ul>
+    </main>
+  </div>
+
+  <script>
+    function downloadResumePDF() {
+      const oldTitle = document.title;
+      document.title = 'Yuqing_Zhou_Resume';
+      window.print();
+      document.title = oldTitle;
+    }
+  </script>
+</body>
+</html>
