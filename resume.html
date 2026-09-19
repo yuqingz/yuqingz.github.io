@@ -30,18 +30,21 @@
       margin: 0 auto;
       padding: 0.75rem 1.5rem;
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      line-height: 1.6;
     }
 
     .top-nav-inner a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
       font-size: 1.2rem;
       font-weight: 600;
+      text-decoration: none;
+      color: rgba(255,255,255,0.75);
     }
 
     .top-nav-inner a:hover {
-      color: #fff;
+      color: #111;
+      opacity: 0.85;
     }
 
     .page {
@@ -152,9 +155,7 @@
 <body>
   <nav class="top-nav">
     <div class="top-nav-inner">
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="resume.html">Resume</a>
+      <a href="index.html">← Back to Home</a>
     </div>
   </nav>
 
@@ -183,7 +184,7 @@
       <p class="item-meta">Ann Arbor, Michigan, USA · 2023 - Present</p>
       <ul>
         <li>Expanded projects into <span style="color:#E57373;"><strong>integrated photonics and metasurface design</strong></span></li>
-        <li>Completed a one-year intra-company transfer assignment at Toyota Frontier Research Center and Toyota Central R&D Labs in Tokyo, Japan, designing quantum photonic chips</li>
+        <li>Completed a one-year intra-company transfer assignment at Toyota Frontier Research Center and Toyota Central R&D Labs in Tokyo, Japan, designing quantum photonic chips (2024 - 2025)</li>
       </ul>
 
       <p class="item-title">Scientist, Toyota Research Institute of North America</p>
@@ -216,17 +217,17 @@
 
       <h2>Recent Publication Highlights</h2>
       <ul>
-        <li>Zhou Y., <em>et al.</em>, Inverse-designed nanophotonic structures for on-chip excitation and broadband emission extraction in diamond quantum spin sensing, <em>Under Review</em></li>
-        <li>Zhou Y., <em>et al.</em>, 2026, Self-organized circle packing framework for spatially graded metalens design, <em>SPIE Optics + Photonics</em></li>
-        <li>Zhou Y., <em>et al.</em>, 2025, Inverse design and porous metal printing of GDL-integrated flow field plates for high-temperature hydrogen fuel cells, <em>International Journal of Hydrogen Energy</em></li>
-        <li>Nomura T., Zhou Y., <em>et al.</em>, 2025, Prototyping a CFRP-aluminum automotive frame via multi-component anisotropic topology optimization, <em>Structural and Multidisciplinary Optimization</em></li>
+        <li>Zhou Y., <em>et al.</em>, Inverse-designed nanophotonic structures for on-chip excitation and broadband emission extraction in diamond quantum spin sensing, <em>Nanophotonics</em>, 2026</li>
+        <li>Zhou Y., <em>et al.</em>, Self-organized circle packing framework for spatially graded metalens design, <em>SPIE Optics + Photonics</em>, 2026</li>
+        <li>Zhou Y., <em>et al.</em>, Inverse design and porous metal printing of GDL-integrated flow field plates for high-temperature hydrogen fuel cells, <em>International Journal of Hydrogen Energy</em>, 2025</li>
+        <li>Nomura T., Zhou Y., <em>et al.</em>, Prototyping a CFRP-aluminum automotive frame via multi-component anisotropic topology optimization, <em>Structural and Multidisciplinary Optimization</em>, 2025</li>
       </ul>
 
       <h2>Expertise and Skills</h2>
       <ul>
         <li><strong>Optimization:</strong> Gradient-based methods, non-gradient global algorithms, structural topology optimization (inverse design)</li>
-        <li><strong>Modeling & Simulation:</strong> Finite element analysis and multiphysics simulations (COMSOL), photonic simulations (Tidy3D)</li>
-        <li><strong>Programming:</strong> Agent-assisted development (VS Code and GitHub Copilot), GPU-accelerated scientific computing and neural networks (Python)</li>
+        <li><strong>Modeling & Simulation:</strong> Finite element analysis (FEA) and multiphysics simulations (COMSOL), finite-difference time-domain (FDTD) and photonic simulations (Tidy3D)</li>
+        <li><strong>Programming:</strong> Agent-assisted development (VS Code and GitHub Copilot), GPU-accelerated scientific computing and scientific machine learning (Python)</li>
       </ul>
     </main>
   </div>

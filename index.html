@@ -242,6 +242,38 @@
       display: none;
     }
 
+    /* Research section: two columns, figures on the right */
+    .research-columns {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .research-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .research-figures {
+      flex: 0 0 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      max-height: 440px;
+      overflow-y: auto;
+      padding-right: 4px;
+      scrollbar-width: thin;
+    }
+
+    .research-figures img {
+      width: 100%;
+      flex: 0 0 auto;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      background: #eee;
+    }
+
     /* LINKS */
     a {
       color: #0066cc;
@@ -318,6 +350,27 @@
         flex: 0 0 auto;
         max-width: 300px;
       }
+
+      /* Stack research text and figures vertically */
+      .research-columns {
+        flex-direction: column;
+      }
+
+      .research-figures {
+        flex: 0 0 auto;
+        flex-direction: row;
+        max-width: 100%;
+        max-height: none;
+        overflow-x: auto;
+        overflow-y: visible;
+        padding-right: 0;
+        padding-bottom: 4px;
+      }
+
+      .research-figures img {
+        flex: 0 0 45%;
+        max-width: 45%;
+      }
     }
   </style>
 </head>
@@ -375,30 +428,38 @@
     <!-- RESEARCH / HIGHLIGHTS -->
     <section id="research">
       <h3>Research</h3>
-      <p>
-        My work lies at the intersection of <strong>design optimization</strong>, <strong>multiphysics simulation</strong>, and <strong>advanced fabrication</strong>. 
-        I formulate structural design problems as PDE-constrained optimization, where at least one constraint is expressed through a partial differential equation governing the physics equilibrium. 
-        I've enjoyed using PDEs to model 
-        <span style="color:#E57373;"><strong>elastic deformation</strong></span>, 
-        <span style="color:#64B5F6;"><strong>fluid flow</strong></span>, 
-        <span style="color:#FFD54F;"><strong>heat transfer</strong></span>, 
-        <span style="color:#81C784;"><strong>electrochemical reaction</strong></span>, and 
-        <span style="color:#BA68C8;"><strong>electromagnetic wave propagation</strong></span> 
-        across different projects.
-        I also incorporate process-specific fabrication constraints to ensure that the optimized designs are manufacturable.
-      </p>
-      Recent topics include:
-      <ul>
-        <li>Quantum photonic integrated circuits
-          <span class="new-pill">NEW!</span>
-        </li>
-        <li>Optical metalens
-          <span class="new-pill">NEW!</span>
-        </li>
+      <div class="research-columns">
+        <div class="research-text">
+          <p>
+            My work lies at the intersection of <strong>design optimization</strong>, <strong>multiphysics simulation</strong>, and <strong>advanced fabrication</strong>.
+            I formulate structural design problems as PDE-constrained optimization, where at least one constraint is expressed through a partial differential equation governing the physics equilibrium.
+            I've enjoyed using PDEs to model
+            <span style="color:#E57373;"><strong>elastic deformation</strong></span>,
+            <span style="color:#64B5F6;"><strong>fluid flow</strong></span>,
+            <span style="color:#FFD54F;"><strong>heat transfer</strong></span>,
+            <span style="color:#81C784;"><strong>electrochemical reaction</strong></span>, and
+            <span style="color:#BA68C8;"><strong>electromagnetic wave propagation</strong></span>
+            across different projects.
+            I also incorporate process-specific fabrication constraints to ensure that the optimized designs are manufacturable.
+          </p>
+          Recent topics include:
+          <ul>
+            <li>Quantum photonic integrated circuits
+              <span class="new-pill">NEW!</span>
+            </li>
+            <li>Optical metalens
+              <span class="new-pill">NEW!</span>
+            </li>
 
-        <li>Lightweight composite structures made by tailored fiber placement</li>
-        <li>Flow field plates for hydrogen fuel cells</li>
-      </ul>
+            <li>Lightweight composite structures made by tailored fiber placement</li>
+            <li>Flow field plates for hydrogen fuel cells</li>
+          </ul>
+        </div>
+        <div class="research-figures">
+          <img src="img/cover_Nanophotonics.png" alt="Nanophotonics cover">
+          <img src="img/cover_COMSOL.png" alt="COMSOL cover">
+        </div>
+      </div>
     </section>
 
     <!-- PUBLICATIONS -->
@@ -409,6 +470,20 @@
       </p>
 
       <ul class="pub-list">
+
+        <li class="pub-item">
+          <div class="pub-figure">
+            <img src="img/2026nanoph.png">
+          </div>
+          <div class="pub-text">
+            <span class="year">2026</span>
+            <span class="pub-title">Inverse-designed nanophotonic structures for on-chip excitation and broadband emission extraction in diamond quantum spin sensing</span><br>
+            Yuqing Zhou, Tsuyoshi Nomura, Yuki Sato, Makoto Nakai, Paul D Schmalenberg, Ercan M Dede<br>
+            <span class="pub-venue">Nanophotonics</span>
+            [<a href="https://doi.org/10.1002/nap2.70264">paper</a>]
+            [<a href="https://onlinelibrary.wiley.com/doi/10.1002/nap2.70287">cover</a>]
+          </div>
+        </li>
 
         <li class="pub-item">
           <div class="pub-figure">
@@ -530,14 +605,6 @@
         <li>Graduate Student Instructor, ME250: Design and Manufacturing I, University of Michigan, 2013, 2016-2018</li>
       </ul>
     </section>
-
-    <div class="hidden-tracker" aria-hidden="true">
-      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=pkCg891-CODHnP3JRTKcY6_6DYh8VXcXtGblMFHI6Es&cl=ffffff&w=a"></script>
-    </div>
   </div>
-
-  <!-- Cloudflare Web Analytics -->
-   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a275ac8672b8487781596ac244d85b61"}'></script>
-   <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
