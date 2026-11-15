@@ -274,6 +274,30 @@
       background: #eee;
     }
 
+    /* Teaching photo gallery */
+    .teaching-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .gallery-arrow {
+      color: #EB0A1E;                     /* Toyota red */
+      font-weight: 700;
+      margin-left: 0.2rem;
+    }
+
+    .teaching-gallery img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      background: #eee;
+    }
+
     /* LINKS */
     a {
       color: #0066cc;
@@ -341,6 +365,10 @@
         font-size: 0.85rem;
       }
 
+      .teaching-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       /* Stack publication figure and text vertically */
       .pub-item {
         flex-direction: column;
@@ -393,7 +421,7 @@
 
       <div class="title-block">
         <h1>Yuqing Zhou</h1>
-        <h2>Optimization Researcher at Toyota, PhD UMich 2018</h2>
+        <h2>Computational Design at Toyota, PhD UMich 2018</h2>
         <div class="affiliation">
           <a href="https://amrd.toyota.com/division/trina/" target="_blank" rel="noopener">Toyota Research Institute of North America</a><br>
           Toyota Motor North America R&D<br>
@@ -412,8 +440,8 @@
     <section id="bio">
       <h3>Bio</h3>
       <p>
-        I am a research scientist in Electronics Research Department at <a href="https://amrd.toyota.com/division/trina/" target="_blank" rel="noopener">Toyota Research Institute of North America</a>.
-        My research focuses on <strong>exploring innovative geometries through simulation-based structural optimization to achieve high-performance and manufacturable engineering designs</strong>.
+        I am a computational design research scientist at <a href="https://amrd.toyota.com/division/trina/" target="_blank" rel="noopener">Toyota Research Institute of North America</a>.
+        My research focuses on <strong>exploring innovative geometries through simulation-based structural optimization to produce high-performance and manufacturable engineering design solutions</strong>.
       </p>
       <p>
         Previously, I spent a wonderful year in Tokyo, Japan working on photonic chip design with <a href="https://www.tytlabs.co.jp/en/" target="_blank" rel="noopener">Toyota Central R&D Labs</a> and <a href="https://global.toyota/jp/mobility/frontier-research/" target="_blank" rel="noopener">Toyota Frontier Research Center</a>.
@@ -598,11 +626,22 @@
       <h3>Services and Teaching</h3>
       <ul>
         <li>Reviewer for structural optimization journals, including Computer Methods in Applied Mechanics and Engineering, International Journal for Numerical Methods in Engineering, Structural and Multidisciplinary Optimization, Journal of Mechanical Design, Engineering Optimization, Engineering Structures, Composites Part B: Engineering, etc.</li>
-        <li>Session organizer, Design of Engineering Materials and Structures, Design Automation Conference (DAC), IDETC, 2021-2024</li>
-        <li>Grad School 101 Panel on industry and entrepreneurial positions, Department of Mechanical Engineering, University of Michigan, 2022</li>
-        <li>Panelist, Design Optimization in Practice, 14th World Congress of Structural and Multidisciplinary Optimization (WCSMO), 2021</li>
-        <li>Guest Lecturer, ME558: Discrete Design Optimization (2017), ME452: Design for Manufacturability (2018), University of Michigan</li>
-        <li>Graduate Student Instructor, ME250: Design and Manufacturing I, University of Michigan, 2013, 2016-2018</li>
+        <li>Session organizer, Design of Engineering Materials and Structures, IDETC, 2021-2024</li>
+        <li>Grad School 101 Panel on industry and entrepreneurial positions, Mechanical Engineering, Univ of Michigan, 2022</li>
+        <li>Panelist, Design Optimization in Practice, World Congress of Structural and Multidisciplinary Optimization (WCSMO), 2021</li>
+        <li>Guest Lecturer, ME558: Discrete Design Optimization, ME452: Design for Manufacturability, Univ of Michigan, 2017-2018</li>
+        <li>Graduate Student Instructor, ME250: Design and Manufacturing I, Univ of Michigan, 2013, 2016-2018 <span class="gallery-arrow" aria-hidden="true">&#8595;</span>
+          <div class="teaching-gallery">
+            <img src="img/ME250/ME250_01.jpg" alt="ME250 course photo 1" loading="lazy">
+            <img src="img/ME250/ME250_02.jpg" alt="ME250 course photo 2" loading="lazy">
+            <img src="img/ME250/ME250_03.jpg" alt="ME250 course photo 3" loading="lazy">
+            <img src="img/ME250/ME250_04.jpg" alt="ME250 course photo 4" loading="lazy">
+            <img src="img/ME250/ME250_05.jpg" alt="ME250 course photo 5" loading="lazy">
+            <img src="img/ME250/ME250_06.jpg" alt="ME250 course photo 6" loading="lazy">
+            <img src="img/ME250/ME250_07.jpg" alt="ME250 course photo 7" loading="lazy">
+            <img src="img/ME250/ME250_08.jpg" alt="ME250 course photo 8" loading="lazy">
+          </div>
+        </li>
       </ul>
     </section>
   </div>
